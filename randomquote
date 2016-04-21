@@ -1,6 +1,6 @@
 # FUNCTION
 function randomquote {
-local QUOTE_FILE="~/.quotes"
+local QUOTE_FILE=~/.quotes
 
 echo -e "\e[1m \e[31m$(shuf -n1 ${QUOTE_FILE})"
 }
