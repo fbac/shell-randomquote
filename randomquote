@@ -1,7 +1,7 @@
 # FUNCTION
 function randomquote {
-local QUOTE_FILES=(~/.quotes.d/*.quotes)
-echo -e "\e[1m \e[31m$(cat ${QUOTE_FILES} | shuf -n1)"
+    local QUOTE_FILES=(~/.quotes.d/*.quotes)
+    echo -e "\e[1m \e[31m$(cat ${QUOTE_FILES} | shuf -n1)"
 }
 
 # FUNC EXEC
