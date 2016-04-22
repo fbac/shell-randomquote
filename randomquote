@@ -3,12 +3,12 @@ function randomquote {
     local THEME='wow'
     local BASE_PATH="$(dirname $0)"
     local QUOTE_FILES="${BASE_PATH}/.quotes.d/${THEME}.quotes"
-    
+
     ## POSIX Compliant
     local LIM=`cat "${QUOTE_FILES}" | wc -l`
     local NUM=`echo $(( $RANDOM % $LIM +1 ))`
     local QUOTE=`sed -n $NUM'p' ${QUOTE_FILES}`
-    echo -e "\e[1m \e[31m${QUOTE}"
+    printf "\e[1m \e[31m${QUOTE}\n"
 }
 
 # FUNC EXEC
