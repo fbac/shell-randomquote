@@ -1,7 +1,14 @@
 # FUNCTION
 function randomquote {
-    local QUOTE_FILES=(~/.quotes.d/*.quotes)
-    echo -e "\e[1m \e[31m$(cat ${QUOTE_FILES} | shuf -n1)"
+    local THEME='wow'
+    local BASE_PATH="$(dirname $0)"
+    local QUOTE_FILES="${BASE_PATH}/.quotes.d/${THEME}.quotes"
+    
+    ## POSIX Compliant
+    local LIM=`cat "${QUOTE_FILES}" | wc -l`
+    local NUM=`echo $(( $RANDOM % $LIM +1 ))`
+    local QUOTE=`sed -n $NUM'p' ${QUOTE_FILES}`
+    echo -e "\e[1m \e[31m${QUOTE}"
 }
 
 # FUNC EXEC
